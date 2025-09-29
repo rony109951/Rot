@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>متجري - روني البحيره</title>
+<link rel="stylesheet" href="{{ url_for( static , filename= style.css ) }}">
+</head>
+<body>
+<div class="container">
+<h1>🎉 متجر روني البحيره 2025</h1>
+
+<h2>📄 الصفحات:</h2>
+<ul>
+{% for pid, page in pages.items() %}
+<li><a href="/page/{{ pid }}">📄 {{ page.title }}</a></li>
+{% endfor %}
+</ul>
+
+<h2>💎 العروض الحالية:</h2>
+<ul>
+{% for offer in offers %}
+<li>🖼️ {{ offer.title }} <br><img src="{{ offer.image }}" alt="" width="200"></li>
+{% endfor %}
+</ul>
+
+<footer>جميع الحقوق محفوظة © روني البحيره 2025</footer>
+</div>
+<script src="{{ url_for( static , filename= script.js ) }}"></script>
+</body>
+  </html>
+  
